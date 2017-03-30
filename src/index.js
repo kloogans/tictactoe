@@ -10,7 +10,7 @@ const td6 = document.querySelector('#six')
 const td7 = document.querySelector('#seven')
 const td8 = document.querySelector('#eight')
 const td9 = document.querySelector('#nine')
-const anyTd = document.querySelectorAll('td')
+let anyTd = document.querySelectorAll('td')
 const turnText = document.querySelector('.turn')
 const body = document.querySelector('body')
 let currentTurn = 'X'
@@ -19,7 +19,6 @@ const possibleWins = [[td1, td2, td3], [td4, td5, td6], [td7, td8, td9], [td1, t
 for (let i = 0; i < anyTd.length; i++) {
   anyTd[i].addEventListener('click', () => {
     anyTd[i].textContent = currentTurn
-
     let someOneWon = false
 
     for (let i = 0; i < possibleWins.length; i++) {
@@ -43,14 +42,11 @@ for (let i = 0; i < anyTd.length; i++) {
   })
 }
 
-// const reset () => {
-//
-// }
-
 const button = document.querySelector('button')
 button.addEventListener('click', () => {
   body.className = ''
-  reset()
+  window.location.reload()
+  // anyTd.textContent = ''
 })
 
 // const main () => {
