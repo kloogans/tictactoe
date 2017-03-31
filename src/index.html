@@ -4,40 +4,39 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
   <title>Tictactoe</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
-
   <main>
   <div class="game">
+    <div class="turn"></div>
   <table id="tictactoe">
     <tr class="rowOne">
-      <td id="one" class="unclicked"></td>
-      <td id="two" class="unclicked"></td>
-      <td id="three" class="unclicked"></td>
+      <td id="one"></td>
+      <td id="two"></td>
+      <td id="three"></td>
     </tr>
     <tr class="rowTwo">
-      <td id="four"class="unclicked"></td>
-      <td id="five" class="unclicked"></td>
+      <td id="four"></td>
+      <td id="five"></td>
       <td id="six"></td>
     </tr>
     <tr class="rowThree">
-      <td id="seven" class="unclicked"></td>
-      <td id="eight" class="unclicked"></td>
-      <td id="nine" class="unclicked"></td>
+      <td id="seven"></td>
+      <td id="eight"></td>
+      <td id="nine"></td>
     </tr>
   </table>
-  <div class="turn"></div>
+</div>
 </main>
 <div class="overlay">
   <div class="dialog">
     <h3>You Won!</h3>
-    <p>Holy Shit dude fuck off</p>
+    <p>Play Again?</p>
     <button>
-      Play Again
+      <i class="fa fa-refresh"></i>
     </button>
   </div>
   </div>
-
-
 </body>
 </html>

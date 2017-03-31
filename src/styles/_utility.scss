@@ -1,9 +1,14 @@
-@mixin font-smoothing($value: on) {
-  @if $value == on {
-    -moz-osx-font-smoothing: grayscale;
-    -webkit-font-smoothing: antialiased;
-  } @else {
-    -moz-osx-font-smoothing: auto;
-    -webkit-font-smoothing: subpixel-antialiased;
-  }
+@mixin linearGrad($top, $bottom) {
+  background:
+    linear-gradient(
+      to bottom,
+      $top 0%,
+      $bottom 100%
+    );
 }
+$white: #f0f0f0;
+$black: #333;
+$niceBlue: rgb(34, 183, 246);
+$niceYellow: rgb(246, 231, 34);
+$radius: 7px;
+$transition: all 0.5s linear;
