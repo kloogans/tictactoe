@@ -1,4 +1,6 @@
 @import 'utility';
+@import url('https://fonts.googleapis.com/css?family=Roboto:100');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css');
 
 $base-text-size: 16px;
 $base-font-family: sans-serif;
@@ -10,13 +12,14 @@ html {
 
 body {
   min-height: 100%;
+  max-width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font: $base-text-size / 1 $base-font-family;
   background:
-    url('https://static.pexels.com/photos/211874/pexels-photo-211874.jpeg'),
+    url($normalBG),
     linear-gradient(
       to bottom,
       rgba(255, 92, 82, 1) 0%,
@@ -27,6 +30,16 @@ body {
   background-size: cover;
   background-attachment: fixed;
   background-blend-mode: overlay;
+}
+
+h1 {
+  font-family: 'Roboto';
+  color: $white;
+  font-size: 2em;
+}
+
+.yellow {
+  color: $niceYellow;
 }
 
 .overlay {
@@ -50,7 +63,12 @@ body.modal main {
 }
 
 .dialog {
-  background-color: white;
+  background-color: rgba(240, 240, 240, 0.7);
+  font-family: 'Roboto';
+  font-weight: 100;
+  font-size: 2em;
+  color: $black;
+  text-align: center;
   padding: 2em;
   width: 33.33%;
   display: flex;
@@ -70,7 +88,6 @@ body.modal main {
 table {
   border: 0;
   border-radius: 5px;
-  margin-top: 0.8em;
 
   td {
     width: 120px;
@@ -79,6 +96,9 @@ table {
     text-align: center;
     transition: all 0.3s linear;
     border-radius: 9px;
+    font-family: 'Roboto';
+    font-weight: 100;
+    user-select: none;
 
     &:hover {
       background-color: rgba(246, 231, 34, 0.5);
@@ -87,20 +107,22 @@ table {
 }
 
 td {
-  font-size: 6em;
+  font-size: 4em;
   color: $white;
-  padding: 0.5em;
 }
 
 .turn {
   color: $white;
-  margin-bottom: 1em;
+  font-size: 1.3em;
+  font-family: $mainFont;
+  margin-top: 1em;
   transition: all 0.5 linear;
 }
 
 button {
   border: 0;
   color: $white;
+  background-color: rgb(249, 126, 159);
   font-size: 1em;
   height: 50px;
   width: 50%;

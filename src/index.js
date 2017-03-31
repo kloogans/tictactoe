@@ -23,6 +23,7 @@ const possibleWins = [[td1, td2, td3], [td4, td5, td6], [td7, td8, td9], [td1, t
 
 for (let i = 0; i < anyTd.length; i++) {
   anyTd[i].addEventListener('click', () => {
+    // Prevents second click on selected element
     if (anyTd[i].textContent !== '') {
       return
     }
@@ -33,32 +34,34 @@ for (let i = 0; i < anyTd.length; i++) {
       if (possibleWins[i][0].textContent === currentTurn &&
       possibleWins[i][1].textContent === currentTurn &&
       possibleWins[i][2].textContent === currentTurn) {
-        modal.textContent = `${currentTurn} Wins!`
         setTimeout(() => {
-          possibleWins[i][0].style.backgroundColor = 'LightGreen'
+          possibleWins[i][0].style.backgroundColor = 'rgba(152, 249, 126, 0.5)'
         }, 100)
         setTimeout(() => {
-          possibleWins[i][1].style.backgroundColor = 'LightGreen'
-        }, 500)
+          possibleWins[i][1].style.backgroundColor = 'rgba(152, 249, 126, 0.5)'
+        }, 400)
         setTimeout(() => {
-          possibleWins[i][2].style.backgroundColor = 'LightGreen'
-        }, 900)
+          possibleWins[i][2].style.backgroundColor = 'rgba(152, 249, 126, 0.5)'
+        }, 700)
         someOneWon = true
-        body.className += 'modal'
+        setTimeout(() => {
+          body.className += 'modal animated fadeIn'
+          modal.textContent = `${currentTurn} Wins!`
+        }, 930)
       }
     }
     if (!someOneWon) {
       counter++
       if (currentTurn === 'X') {
         currentTurn = 'O'
-        turnText.textContent = 'O'
+        turnText.textContent = 'Player : O'
       } else {
         currentTurn = 'X'
-        turnText.textContent = 'X'
+        turnText.textContent = 'Player : X'
       }
     }
     if (counter >= 9) {
-      body.className += 'modal'
+      body.className += 'modal animated fadeIn'
       modal.textContent = 'Draw'
     }
   })
